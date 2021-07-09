@@ -1,6 +1,7 @@
 import cv2
 from os import path as ospath
 import subprocess
+from sys import argv
 
 def create_detector(img):
     (_,return_obj)=detector.detectAndCompute(img,None)
@@ -8,7 +9,7 @@ def create_detector(img):
 
 path=ospath.dirname(ospath.abspath(__file__))+'\\'
 
-video_path="ここに動画のパス"
+video_path=str(argv[1])
 
 #チャンピオン時と結果の画面の判定用画像
 champ_img=cv2.imread(path+'champ.png')
